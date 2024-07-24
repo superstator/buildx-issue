@@ -1,0 +1,3 @@
+FROM foo
+
+RUN touch bar
