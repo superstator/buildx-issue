@@ -6,5 +6,6 @@ clean:
 	docker image rm -f foo bar
 
 build: builder
-	docker buildx build --builder=foobuilder -f Dockerfile.foo -t foo .
+	docker buildx build --builder=foobuilder -f Dockerfile.foo -t foo --load .
+	docker image ls
 	docker buildx build --builder=foobuilder -f Dockerfile.bar -t bar --build-context foo=docker-image://foo .
